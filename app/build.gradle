@@ -1,7 +1,5 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
 
 android {
@@ -22,6 +20,8 @@ android {
     }
 }
 
+final DAGGER_VER = '2.21'
+final MATERIAL_DIALOG_VER = '3.1.1'
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -32,4 +32,21 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+//    Custom dependencies
+    implementation "com.google.dagger:dagger:${DAGGER_VER}"
+    annotationProcessor "com.google.dagger:dagger-compiler:${DAGGER_VER}"
+
+    implementation 'com.squareup.retrofit2:retrofit:2.6.2'
+
+    implementation "com.afollestad.material-dialogs:core:${MATERIAL_DIALOG_VER}"
+    implementation "com.afollestad.material-dialogs:input:${MATERIAL_DIALOG_VER}"
+    implementation "com.afollestad.material-dialogs:files:${MATERIAL_DIALOG_VER}"
+    implementation "com.afollestad.material-dialogs:color:${MATERIAL_DIALOG_VER}"
+    implementation "com.afollestad.material-dialogs:datetime:${MATERIAL_DIALOG_VER}"
+    implementation "com.afollestad.material-dialogs:bottomsheets:${MATERIAL_DIALOG_VER}"
+    implementation "com.afollestad.material-dialogs:lifecycle:${MATERIAL_DIALOG_VER}"
+
+    implementation "com.squareup.okhttp3:okhttp:4.2.2"
+
 }
